@@ -20,65 +20,65 @@ public class StreamsApiWorkout1Application {
 	}
 
 	public static void main(String[] args) {
-//		SpringApplication.run(StreamsApiWorkout1Application.class, args);
+		SpringApplication.run(StreamsApiWorkout1Application.class, args);
 
-//		companies.stream()
-//				.forEach(company -> System.out.println(company));
+		companies.stream()
+				.forEach(company -> System.out.println(company));
 
-//		List<Company> legalCorporation = companies.stream()
-//				.map(company -> new Company(
-//						company.getCompanyName() + " inc",
-//						company.getCompanyLocation(),
-//						company.getCompanySalary(),
-//						company.getCompanyProjects()
-//				)).collect(Collectors.toList());
-//
-//		System.out.println(legalCorporation);
+		List<Company> legalCorporation = companies.stream()
+				.map(company -> new Company(
+						company.getCompanyName() + " inc",
+						company.getCompanyLocation(),
+						company.getCompanySalary(),
+						company.getCompanyProjects()
+				)).collect(Collectors.toList());
 
-//		List<Company> filtereCompanies = companies.stream()
-//				.filter(company -> company.getCompanyName().contains("T"))
-//				.map(company -> new Company(
-//						company.getCompanyName(),
-//						company.getCompanyLocation(),
-//						company.getCompanySalary(),
-//						company.getCompanyProjects()
-//				)).collect(Collectors.toList());
-//
-//		System.out.println(filtereCompanies);
+		System.out.println(legalCorporation);
+
+		List<Company> filtereCompanies = companies.stream()
+				.filter(company -> company.getCompanyName().contains("T"))
+				.map(company -> new Company(
+						company.getCompanyName(),
+						company.getCompanyLocation(),
+						company.getCompanySalary(),
+						company.getCompanyProjects()
+				)).collect(Collectors.toList());
+
+		System.out.println(filtereCompanies);
 
 		//Find First
 
-//		Company findFirstCompany = companies.stream()
-//				.filter(company -> company.getCompanyName().contains("S"))
-//				.map(company -> new Company(
-//						company.getCompanyName(),
-//						company.getCompanyLocation(),
-//						company.getCompanySalary(),
-//						company.getCompanyProjects()
-//				)).findFirst().orElse(null);
-//		System.out.println(findFirstCompany);
+		Company findFirstCompany = companies.stream()
+				.filter(company -> company.getCompanyName().contains("S"))
+				.map(company -> new Company(
+						company.getCompanyName(),
+						company.getCompanyLocation(),
+						company.getCompanySalary(),
+						company.getCompanyProjects()
+				)).findFirst().orElse(null);
+		System.out.println(findFirstCompany);
 
 
 	//FlatMap
-//	String projects = companies.stream()
-//			.map(company -> company.getCompanyProjects())
-//			.flatMap(strings -> strings.stream())
-//			.collect(Collectors.joining(","));
-//
-//		System.out.println(projects);
+	String projects = companies.stream()
+			.map(company -> company.getCompanyProjects())
+			.flatMap(strings -> strings.stream())
+			.collect(Collectors.joining(","));
+
+		System.out.println(projects);
 
 		//short circuit operations
-//		List<Company> shortCircuit =
-//				companies.stream()
-//						.skip(2)
-//						.limit(2)
-//						.collect(Collectors.toList());
-//		System.out.println(shortCircuit);
+		List<Company> shortCircuit =
+				companies.stream()
+						.skip(2)
+						.limit(2)
+						.collect(Collectors.toList());
+		System.out.println(shortCircuit);
 
 		//Finite Data
-//		Stream.generate(Math::random)
-//				.limit(5)
-//				.forEach(value -> System.out.println(value));
+		Stream.generate(Math::random)
+				.limit(5)
+				.forEach(value -> System.out.println(value));
 
 		//sorting
 		List<Company> sortedCompanies =
