@@ -88,5 +88,13 @@ public class StreamsApiWorkout1Application {
 						.collect(Collectors.toList());
 		System.out.println(sortedCompanies);
 
+		//Filter
+		List<Integer> numberList = new ArrayList<Integer>();
+		numberList.add(5);
+		numberList.add(10);
+		numberList.add(13);
+
+		System.out.println(numberList.stream().filter(i -> i%2 == 0).reduce(0, (c,e) -> c+e));
+
 	}
 }
